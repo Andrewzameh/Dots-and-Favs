@@ -1,0 +1,9 @@
+configuration {
+run-display-format: "{icon} {name}";
+drun-display-format: "{icon} {name}";
+modi: "window,run,drun";
+show-icon:true;
+icon-theme: "Papirus";
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

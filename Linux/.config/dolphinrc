@@ -1,0 +1,36 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
+
+[ExtractDialog]
+DP-1 Height 1680x1050 DP-1=530
+DP-1 Width 1680x1050 DP-1=1120
+DirHistory[$e]=/mnt/sdb3/Code/Data Science/Work/,/run/media/andrewsameh/Drop Box/Work/,$HOME/Downloads/
+
+[General]
+Version=202
+ViewPropsTimestamp=2022,9,25,22,0,43.866
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+Recent Files[$e]=file:$HOME,file:///mnt/sdb3/Code/Data Science/Work/Flex Script V1.1
+Recent URLs[$e]=file:$HOME/Downloads/,file:///mnt/sdb3/Code/Data Science/Work/,file:$HOME/
+listViewIconSize=64
+
+[KPropertiesDialog]
+DP-1 Height 1680x1050=458
+DP-1 Height 1680x1050 DP-1=579
+DP-1 Width 1680x1050=355
+DP-1 Width 1680x1050 DP-1=506
+
+[MainWindow]
+DP-1 Height 1680x1050=860
+DP-1 Width 1680x1050=1492
+DP-1 XPosition 1680x1050=0
+DP-1 YPosition 1680x1050=29
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Open-with settings]
+CompletionMode=1
+History=
