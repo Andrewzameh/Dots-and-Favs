@@ -1,0 +1,225 @@
+format = """
+${os.symbols}\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$conda\
+$package\
+$fill\
+$cmd_duration $python $nodejs $battery $jobs $time\
+$line_break\
+$character"""
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+
+# docker
+[docker_context]
+symbol = "🐋 "
+disabled = false
+# symbol = " "
+
+[conda]
+format = 'via [👾 $environment](yellow) '
+# symbol = " "
+
+[python]
+symbol = ' '
+format = " [ $version](bold yellow) "
+pyenv_version_name = false
+
+[nodejs]
+format = "via [ $version$environment](bold green) "
+
+[fill]
+symbol = " "
+
+[directory]
+read_only = " "
+truncation_length = 4
+truncate_to_repo = true
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](purple)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '(:[$all_status$ahead_behind]($style)) '
+conflicted = '\[ [$count](bright-white bold)\]'
+ahead = '\[[﯁ ](bright-blue)[$count](bright-white bold)\]'
+behind = '\[[﮾ ](white)[$count](bright-white bold)\]'
+diverged = '\[[ ](purple)|[ ﯁ ](bright-blue)[$ahead_count](bright-white bold)[ ﮾ ](white)[$behind_count](bright-white)\]'
+untracked = '\[ [$count](bright-white bold)\]'
+stashed = '\[[](yellow) [$count](bright-white bold)\]'
+modified = '\[[ ](bright-yellow)[$count](bright-white bold)\]'
+staged = '\[[ ](bright-green)[$count](bright-white bold)\]'
+renamed = '\[[ ](bright-cyan) [$count](bright-white bold)\]'
+deleted = '\[ [$count](bright-white bold)\]'
+windows_starship = '/mnt/c/Users/username/scoop/apps/starship/current/starship.exe'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = '🔖 '
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[🕙 $time]($style)"
+#time_format = '%R'
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
+
+# kubernetes
+[kubernetes]
+symbol = "⛵ "
+style = "dimmed green"
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[dart]
+symbol = " "
+
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+

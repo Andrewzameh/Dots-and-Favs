@@ -1,8 +1,11 @@
 #
 # ~/.bashrc
 #
+export TERM="xterm-256color"                      # getting proper colors
+export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 
 [[ $- != *i* ]] && return
+
 colors() {
 	local fgc bgc vals seq0
 
@@ -88,12 +91,32 @@ else
 fi
 
 unset use_color safe_term match_lhs sh
+#ALIAS
 
-#alias cp="cp -i"                          # confirm before overwriting something
-#alias df='df -h'                          # human-readable sizes
-#alias free='free -m'                      # show sizes in MB
-#alias np='nano -w PKGBUILD'
-#alias more=less
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+alias ..='cd ..'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ls='exa -al --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'
+alias ll='exa -l --color=always --group-directories-first'
+alias lt='exa -aT --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
+alias vim='nvim'
+
+alias l='lsd -hA --group-dirs first'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 xhost +local:root > /dev/null 2>&1
 
@@ -113,8 +136,8 @@ shopt -s histappend
 #
 # # ex - archive extractor
 # # usage: ex <file>
-ex ()
-{
+
+ex () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
@@ -135,12 +158,10 @@ ex ()
   fi
 }
 
-neofetch
-
-
-alias l='lsd -hA --group-dirs first'
 alias ex='exa --icons -a --group-directories-first'
 
+
+#ANACONDA
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/andrewsameh/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -155,7 +176,17 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-conda config --set auto_activate_base False
 
+#Neofetch
+neofetch
 
+#OpenFoam
+#. /opt/OpenFOAM/OpenFOAM-9/etc/bashrc
+
+#Starship prompt
 eval "$(starship init bash)"
+#
+# # BEGIN_KITTY_SHELL_INTEGRATION
+# if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# # END_KITTY_SHELL_INTEGRATION
+# . "$HOME/.cargo/env"
